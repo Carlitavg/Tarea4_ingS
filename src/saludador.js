@@ -53,6 +53,32 @@ saludarButton.addEventListener("click", (event) => {
             saludoGenero = " "; 
         }
     }
+    else{
+        if (horaActual >= 5 && horaActual < 12) {
+            saludoHora = "Good morning";
+        } else if (horaActual >= 12 && horaActual < 18) {
+            saludoHora = "Good afternoon";
+        } else {
+            saludoHora = "Good evening";
+        }
+        
+        if (generoSeleccionado === "Masculino") {
+            if (edadSaludo <= 30) {
+                saludoxEdad = "young man ";
+            } else {
+                saludoxEdad = "Mr. ";
+            }
+        } else if (generoSeleccionado === "Femenino") {
+            if (edadSaludo <= 30) {
+                saludoxEdad = "Miss ";
+            } else {
+                saludoxEdad = "Mrs. ";
+            }
+        } else {
+            saludoGenero = " ";
+        }
+        
+    }
 
 //   div.innerHTML = "<p>" + "Hola " + nombreSaludo + "</p>";
 //   div.innerHTML = "<p>" + saludoHora +", "+ nombreSaludo + "</p>";
