@@ -1,6 +1,8 @@
 const nombre = document.querySelector("#nombre");
 const saludarButton = document.querySelector("#Saludar_button");
 const div = document.querySelector("#saludo");
+const genero = document.querySelector("#genero");
+
 
 saludarButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -9,6 +11,8 @@ saludarButton.addEventListener("click", (event) => {
   let fechaActual = new Date();
   let horaActual = fechaActual.getHours();
   let saludoHora = "";
+  let saludoGenero = "";
+  const generoSeleccionado = genero.value;
 
   if (horaActual >= 5 && horaActual < 12) {
     saludoHora = "Buenos días";
@@ -18,7 +22,17 @@ saludarButton.addEventListener("click", (event) => {
     saludoHora = "Buenas noches";
   }
 
-  div.innerHTML = "<p>" + "Hola " + nombreSaludo + "</p>";
-  div.innerHTML = "<p>" + saludoHora +", "+ nombreSaludo + "</p>";
+
+  if (generoSeleccionado === "Masculino") {
+    saludoGenero = "hombre";
+  } else if (generoSeleccionado === "Femenino") {
+    saludoGenero = "mujer";
+  } else {
+    saludoGenero = "persona"; 
+  }
+
+//   div.innerHTML = "<p>" + "Hola " + nombreSaludo + "</p>";
+//   div.innerHTML = "<p>" + saludoHora +", "+ nombreSaludo + "</p>";
+  div.innerHTML = "<p>" + saludoHora +", "+ nombreSaludo + ", genero: "+ saludoGenero + "</p>";
 });
 

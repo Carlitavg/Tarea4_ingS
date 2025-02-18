@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        div, label, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div>Nombre: </div>
@@ -12,6 +21,14 @@
     <input type="submit" value="Saludar" id="Saludar_button" />
     <div id="saludo"></div>
     
+    <label for="genero">Sexo:</label>
+    <select id="genero" name="genero">
+        <option value="Sin respuesta"></option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        
+    </select><br><br>
+
     <script type="module" src="./src/saludador.js"></script>
 </body>
 </html>
