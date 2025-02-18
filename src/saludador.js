@@ -3,6 +3,7 @@ const saludarButton = document.querySelector("#Saludar_button");
 const div = document.querySelector("#saludo");
 const genero = document.querySelector("#genero");
 const edad = document.querySelector("#edad");
+const idioma = document.querySelector("#idioma");
 
 saludarButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -15,38 +16,43 @@ saludarButton.addEventListener("click", (event) => {
   let saludoxEdad = "";
   const generoSeleccionado = genero.value;
   const edadSaludo = Number.parseInt(edad.value);
+  const idiomaSeleccionado = idioma.value;
 
-  if (horaActual >= 5 && horaActual < 12) {
-    saludoHora = "Buenos días";
-  } else if (horaActual >= 12 && horaActual < 18) {
-    saludoHora = "Buenas tardes";
-  } else {
-    saludoHora = "Buenas noches";
-  }
-
-
-  if (generoSeleccionado === "Masculino") {
-    if(edadSaludo<=30)
+  if(idiomaSeleccionado == "Español")
     {
-        saludoxEdad = "joven "
-    }
-    else
-    {
-        saludoxEdad = "Sr. "
-    }
 
-  } else if (generoSeleccionado === "Femenino") {
-    if(edadSaludo<=30)
-        {
-            saludoxEdad = "señorita; "
+        if (horaActual >= 5 && horaActual < 12) {
+            saludoHora = "Buenos días";
+        } else if (horaActual >= 12 && horaActual < 18) {
+            saludoHora = "Buenas tardes";
+        } else {
+            saludoHora = "Buenas noches";
         }
-        else
-        {
-            saludoxEdad = "Sra. "
+
+
+        if (generoSeleccionado === "Masculino") {
+            if(edadSaludo<=30)
+            {
+                saludoxEdad = "joven "
+            }
+            else
+            {
+                saludoxEdad = "Sr. "
+            }
+
+        } else if (generoSeleccionado === "Femenino") {
+            if(edadSaludo<=30)
+                {
+                    saludoxEdad = "señorita; "
+                }
+                else
+                {
+                    saludoxEdad = "Sra. "
+                }
+        } else {
+            saludoGenero = " "; 
         }
-  } else {
-    saludoGenero = " "; 
-  }
+    }
 
 //   div.innerHTML = "<p>" + "Hola " + nombreSaludo + "</p>";
 //   div.innerHTML = "<p>" + saludoHora +", "+ nombreSaludo + "</p>";
